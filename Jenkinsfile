@@ -27,5 +27,15 @@ pipeline {
                 '''
             }
         }
+
+         stage('Test Stage') {
+            
+            steps {
+                sh '''
+                    echo "Printing from the test stage!!!"
+                
+                '''
+            }
+        }
     }
 }
