@@ -33,6 +33,8 @@ pipeline {
             steps {
                 sh '''
                     echo "Printing from the test stage!!!"
+                    test -f build/index.html && echo "File exists" || echo "File missing"
+
                 
                 '''
             }
