@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         NETLIFY_SITE_ID = 'e884f76b-194e-437e-b6bb-3a3d6e3b0d4e'
+        NETLIFY_AUTH_TOKEN = credentials('vdespa-exampe')
     }
 
     stages {
@@ -63,6 +64,7 @@ pipeline {
                   npm install -g netlify-cli
                   netlify --version
                   echo "deploying to the site ID: $NETLIFY_SITE_ID"
+                  netlify status
                 '''
             }
         }
