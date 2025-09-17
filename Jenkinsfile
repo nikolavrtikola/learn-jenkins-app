@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    environment {
+        NETLIFY_SITE_ID = 'e884f76b-194e-437e-b6bb-3a3d6e3b0d4e'
+    }
+
     stages {
         stage('Local Jenkins File') {
             steps {
@@ -57,7 +62,7 @@ pipeline {
                 sh '''
                   npm install -g netlify-cli
                   netlify --version
-
+                  echo "deploying to the site ID: $NETLIFY_SITE_ID"
                 '''
             }
         }
