@@ -61,7 +61,7 @@ pipeline {
             }
             steps {
                 sh '''
-                  npm install netlify-cli
+                  npm install netlify-cli -g
                   netlify --version
                   echo "deploying to the site ID: $NETLIFY_SITE_ID"
                   node_modules/.bin/ status
